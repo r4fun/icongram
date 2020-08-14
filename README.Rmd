@@ -22,6 +22,10 @@ library(icongram)
 
 `r scales::comma(nrow(igrams))` icons for shiny development thanks to [icongram](https://icongr.am).
 
+```{r, echo=FALSE}
+knitr::include_graphics("man/figures/demo.png")
+```
+
 ## Installation
 
 You can install the development version of hover from GitHub with:
@@ -75,9 +79,5 @@ server <- function(input, output, session) {
 }
 
 shinyApp(ui, server)
-```
-
-```{r, echo=FALSE}
-knitr::include_graphics("man/figures/demo.png")
 ```
 

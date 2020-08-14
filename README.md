@@ -10,6 +10,8 @@ icongram
 10,107 icons for shiny development thanks to
 [icongram](https://icongr.am).
 
+<img src="man/figures/demo.png" width="100%" />
+
 Installation
 ------------
 
@@ -71,5 +73,3 @@ A small shiny example:
     }
 
     shinyApp(ui, server)
-
-<img src="man/figures/demo.png" width="100%" />
