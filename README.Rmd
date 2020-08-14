@@ -1,0 +1,83 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+
+library(icongram)
+```
+
+# icongram
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+`r scales::comma(nrow(igrams))` icons for shiny development thanks to [icongram](https://icongr.am).
+
+## Installation
+
+You can install the development version of hover from GitHub with:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("r4fun/icongram")
+```
+
+## Example
+
+Return an icon by calling `igram`:
+
+```r
+igram(
+  icon = "r",
+  lib = "simple",
+  size = 128,
+  color = "default" # or a hex code, e.g. ff2600
+)
+```
+
+Icon information is stored in `igrams`:
+
+```{r}
+igrams
+```
+
+
+A small shiny example:
+
+```r
+library(shiny)
+library(icongram)
+
+ui <- fluidPage(
+  fluidRow(
+    column(
+      width = 12,
+      align = "center",
+      h1("icongram for shiny"),
+      igram("r"),
+      br(),
+      tags$code('icongram::igram("r")')
+    )
+  )
+)
+
+server <- function(input, output, session) {
+  
+}
+
+shinyApp(ui, server)
+```
+
+```{r, echo=FALSE}
+knitr::include_graphics("man/figures/demo.png")
+```
+
