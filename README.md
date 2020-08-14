@@ -15,7 +15,7 @@ icongram
 Installation
 ------------
 
-You can install the development version of hover from GitHub with:
+You can install the development version of icongram from GitHub with:
 
     # install.packages("devtools")
     devtools::install_github("r4fun/icongram")

@@ -28,7 +28,7 @@ knitr::include_graphics("man/figures/demo.png")
 
 ## Installation
 
-You can install the development version of hover from GitHub with:
+You can install the development version of icongram from GitHub with:
 
 ``` r
 # install.packages("devtools")
