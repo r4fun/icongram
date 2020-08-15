@@ -40,8 +40,13 @@ devtools::install_github("r4fun/icongram")
 
 Return an icon by calling `igram`:
 
-```{r}
-igram(icon = "r")
+```r
+igram(
+  icon = "r", 
+  lib = "simple",
+  size = 128, 
+  color = "default" # alternatively, a hexcode
+)
 ```
 
 Icon information is stored in `igrams`:
