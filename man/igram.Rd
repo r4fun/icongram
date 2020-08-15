@@ -4,7 +4,7 @@
 \alias{igram}
 \title{Return an icon}
 \usage{
-igram(icon, lib = "simple", size = 128, color = "default")
+igram(icon, lib = "simple", size = 128, color = "default", raw = FALSE)
 }
 \arguments{
 \item{icon}{icon name}
@@ -14,6 +14,8 @@ igram(icon, lib = "simple", size = 128, color = "default")
 \item{size}{icon size}
 
 \item{color}{icon color as hexcode, excluding #}
+
+\item{raw}{return raw html instead of viewing icon in rstudio viewer}
 }
 \description{
 Return an icon

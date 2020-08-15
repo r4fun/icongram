@@ -40,13 +40,8 @@ devtools::install_github("r4fun/icongram")
 
 Return an icon by calling `igram`:
 
-```r
-igram(
-  icon = "r",
-  lib = "simple",
-  size = 128,
-  color = "default" # or a hex code, e.g. ff2600
-)
+```{r}
+igram(icon = "r")
 ```
 
 Icon information is stored in `igrams`:
@@ -81,4 +76,15 @@ server <- function(input, output, session) {
 
 shinyApp(ui, server)
 ```
+
+To view the raw HTML, use `raw = TRUE`:
+
+```r
+igram("r", raw = TRUE)
+```
+
+```{r, echo=FALSE}
+print(igram("r", raw = TRUE))
+```
+
 
