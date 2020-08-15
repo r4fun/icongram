@@ -5,6 +5,9 @@ icongram
 ========
 
 <!-- badges: start -->
+
+[![R build
+status](https://github.com/r4fun/icongram/workflows/R-CMD-check/badge.svg)](https://github.com/r4fun/icongram/actions)
 <!-- badges: end -->
 
 10,107 icons for shiny development thanks to

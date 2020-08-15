@@ -18,6 +18,7 @@ library(icongram)
 # icongram
 
 <!-- badges: start -->
+[![R build status](https://github.com/r4fun/icongram/workflows/R-CMD-check/badge.svg)](https://github.com/r4fun/icongram/actions)
 <!-- badges: end -->
 
 `r scales::comma(nrow(igrams))` icons for shiny development thanks to [icongram](https://icongr.am).

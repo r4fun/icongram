@@ -19,6 +19,6 @@ Runtime$evaluate(expression = 'document.documentElement.outerHTML') %...>%
       rvest::html_nodes("code") %>%
       rvest::html_text()
 
-    saveRDS(out, "inst/extdata/octicons.rds")
+    saveRDS(out, "inst/extdata/octicons.rds", version = 2)
   } %>%
   finally(~ client$disconnect())
