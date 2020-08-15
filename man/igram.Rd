@@ -18,3 +18,6 @@ igram(icon, lib = "simple", size = 128, color = "default")
 \description{
 Return an icon
 }
+\seealso{
+\code{\link{igrams}}
+}
