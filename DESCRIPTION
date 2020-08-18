@@ -1,12 +1,9 @@
 Package: icongram
-Title: What the Package Does (One Line, Title Case)
-Version: 0.0.0.9000
-Authors@R: 
-    person(given = "Tyler",
-           family = "Littlefield",
-           role = c("aut", "cre"),
-           email = "tylurp1@gmail.com")
-Description: What the package does (one paragraph).
+Title: Interface to Icongram
+Version: 0.1.0
+Authors@R: c(person(given = "Tyler", family = "Littlefield", role = c("aut", "cre"), email = "tylerlittlefield@hey.com"),
+             person(given = "Jenil", family = "Gogari", role=c("ctb","cph"),comment="Creator of Icongram"))
+Description: Interface to Icongram, easily fetch svg icons with a single function.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
@@ -22,4 +19,7 @@ Depends:
 URL: https://github.com/r4fun/icongram
 BugReports: https://github.com/r4fun/icongram/issues
 Suggests: 
-    testthat
+    testthat,
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr

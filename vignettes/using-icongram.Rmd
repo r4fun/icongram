@@ -1,0 +1,64 @@
+---
+title: "Using icongram"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Using icongram}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+Using icongram is pretty simple but behind the scenes it's using the `httr` package to get the HTML content. This means that:
+
+1. Using this package requires internet connection.
+2. If [icongr.am](https://icongr.am) ever went offline, this package would no longer function.
+
+This package cannot do anything if the API shuts down, but we can take steps to ensure that icons we fetch today, work in the future and while offline. This is done by simply copying the raw HTML initially and then storing it as a function for future, offline use. To do this, load the package:
+
+```{r setup}
+library(icongram)
+```
+
+Then, call `raw = TRUE` so that we can copy the raw HTML content:
+
+```{r fetch raw html}
+x <- igram("r", raw = TRUE)
+print(x)
+```
+
+Paste the HTML into `htmltools::HTML` and wrap into a function:
+
+```{r function creation}
+r_icon <- function() {
+  htmltools::HTML('<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="128" height="128" fill="currentColor"><title>R icon</title><path d="M12 18.82c-6.627 0-12-3.598-12-8.037s5.373-8.037 12-8.037 12 3.599 12 8.037-5.373 8.037-12 8.037zm1.837-12.932c-5.038 0-9.121 2.46-9.121 5.495s4.083 5.494 9.12 5.494 8.756-1.682 8.756-5.494-3.718-5.495-8.755-5.495zM18.275 15.194a9.038 9.038 0 0 1 1.149.433 2.221 2.221 0 0 1 .582.416 1.573 1.573 0 0 1 .266.383l2.863 4.826-4.627.002-2.163-4.063a5.229 5.229 0 0 0-.716-.982.753.753 0 0 0-.549-.25h-1.099v5.292l-4.093.001V7.737h8.221s3.744.067 3.744 3.63a3.822 3.822 0 0 1-3.578 3.827zm-1.78-4.526l-2.479-.001v2.298h2.479a1.134 1.134 0 0 0 1.148-1.17 1.07 1.07 0 0 0-1.148-1.127z"/></svg>')
+}
+```
+
+Now we can use it offline! If you want to preview it in the RStudio viewer pane you can run:
+
+```{r rstudio viewer pane}
+htmltools::browsable(r_icon())
+```
+
+And when using in shiny, you just need to call the function:
+
+```r
+library(shiny)
+
+ui <- fluidPage(
+  r_icon()
+)
+
+server <- function(input, output, session) {
+  
+}
+
+shinyApp(ui, server)
+```
+
